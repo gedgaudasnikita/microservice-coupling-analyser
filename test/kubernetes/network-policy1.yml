@@ -1,0 +1,17 @@
+kind: NetworkPolicy
+metadata:
+  name: network-policy
+spec:
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          name: Pod1
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          name: Pod2
