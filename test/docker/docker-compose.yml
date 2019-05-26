@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  gateway:
+    image: namespace:gateway.master
+    links:
+      - session
+      - postgres
+
+  session:
+    image: napespace:session.master
+    links:
+      - cassandra
+
+  cassandra:
+    build:
+      context: env/cassandra/
+      
+  postgres:
+    build:
+      context: env/postgres/
