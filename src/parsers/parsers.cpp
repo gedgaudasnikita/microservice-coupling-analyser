@@ -28,7 +28,7 @@ InputServiceStructureModel parseDocker(std::string workingDir) {
           if (links.IsDefined() && links.IsSequence()) {
             for (const auto linkEntry : links) {
               ServiceDependency newServiceDependency;
-              newServiceDependency.fromServiceName = linkEntry.as<std::string>();
+              newServiceDependency.fromServiceName = serviceEntry.first.as<std::string>();
               newServiceDependency.toServiceName = linkEntry.as<std::string>();
               localInputModel.serviceDependencies.push_back(newServiceDependency);
             }

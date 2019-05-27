@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  A:
+    links:
+      - B
+
+  B:
+    links:
+      - C
+      - D
+
+  C:
+    links:
+      - E
+      
+  D:
+    links:
+      - E
+      - F
+
+  E:
+
+  F:
+    links:
+      - A
+
